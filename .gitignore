@@ -1,0 +1,9 @@
+.runs/
+__pycache__/
+server.log
+server-error.log
+server.pid
+server-process.json
+R/results/
+python-path.txt
+dist/

@@ -1,0 +1,9 @@
+{
+  "name": "Spatial BRP explorer (Python + base R)",
+  "build": { "dockerfile": "Dockerfile" },
+  "forwardPorts": [8765],
+  "portsAttributes": {
+    "8765": { "label": "Spatial BRP explorer", "onAutoForward": "openBrowser" }
+  },
+  "postStartCommand": "python .devcontainer/start.py"
+}

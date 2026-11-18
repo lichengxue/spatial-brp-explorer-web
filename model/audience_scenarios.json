@@ -1,0 +1,44 @@
+[
+  {
+    "id": "regional-global-40",
+    "title": "Start here · regional vs global 40%",
+    "description": "Natal homing, directional movement, and four SPR methods with one SPR-constrained yield benchmark.",
+    "focus": "Compare Reg-Move with SpE-RecW: both meet a recruitment-weighted global SPR of 40%, but only Reg-Move explicitly targets 40% in each region. Here Yield-SPR overlaps Reg-Move; click the legend to inspect either curve. Pop-Move also coincides with Reg-Move under homing, so that duplicate is omitted.",
+    "settings": {"structure":"NH","movement":"high","life_history":"short","recruitment":"mean","historical_years":100,"rules":["SpE-RecW","SpD-RecW","Pop-NoMove","Reg-Move"],"benchmarks":["Yield-SPR"]}
+  },
+  {
+    "id": "global-weights",
+    "title": "Whose global 40%? · weighting choices",
+    "description": "Metapopulation with destination biology: recruitment, equal, survey and catch weighting share a label but define different targets.",
+    "focus": "Compare the regional SPRs from the four global weighting methods. The Global SPR · RecW column uses recruitment weights consistently for comparison; an equal-, survey- or catch-weighted method need not give 40% in that column.",
+    "settings": {"structure":"MPD","movement":"high","life_history":"short","recruitment":"mean","historical_years":100,"rules":["SpE-RecW","SpE-EqW","SpE-SurvW","SpE-CatchW","Reg-Move"],"benchmarks":["Yield-SPR"]}
+  },
+  {
+    "id": "joint-target-search",
+    "title": "Can both population targets be met?",
+    "description": "Long-lived metapopulation with strong directional movement. Compare natal-population and regional SPR targets.",
+    "focus": "Look for the Pop-Move availability message in the comparison table. This example illustrates a bounded search without an accepted population-target solution while the regional and global calculations remain usable; it is not a proof that every possible solution is absent.",
+    "settings": {"structure":"MPO","movement":"high","life_history":"long","recruitment":"mean","historical_years":100,"rules":["SpE-RecW","Pop-NoMove","Pop-Move","Reg-Move"],"benchmarks":["Yield-SPR"]}
+  },
+  {
+    "id": "spr-and-msy",
+    "title": "SPR protection vs system MSY",
+    "description": "Natal homing with Beverton–Holt recruitment: compare SPR rules, SPR-constrained yield and unconstrained system MSY.",
+    "focus": "Compare Yield-SPR with Yield-Max · system MSY. Higher total yield can come with a regional SPR below 40%. SPR and biomass depletion are different quantities under Beverton–Holt; inspect both the SPR table and the biomass curves.",
+    "settings": {"structure":"NH","movement":"high","life_history":"short","recruitment":"sr","historical_years":100,"rules":["SpE-RecW","SpD-RecW","Pop-NoMove","Reg-Move"],"benchmarks":["Yield-SPR","Yield-Max"]}
+  },
+  {
+    "id": "seasonal-feedback",
+    "title": "Seasonal movement + biomass feedback",
+    "description": "Four different seasonal transfers in a metapopulation, with reduced historical biomass and annual fishing feedback.",
+    "focus": "Open the movement editor to inspect the four transfers, then compare the F₁ and F₂ plots below catch. SPR rules adjust fishing with biomass; the Yield-SPR benchmark holds optimized F constant. Those projections therefore compare different implementation rules.",
+    "settings": {"structure":"MPO","movement":"custom","seasonal_movement":[{"m12":5,"m21":15},{"m12":25,"m21":10},{"m12":45,"m21":5},{"m12":15,"m21":20}],"life_history":"short","recruitment":"mean","historical_F":0.8,"historical_years":100,"projection":"feedback","rules":["SpE-RecW","SpD-RecW","Pop-NoMove","Reg-Move"],"benchmarks":["Yield-SPR"]}
+  },
+  {
+    "id": "no-movement-check",
+    "title": "No movement · the control case",
+    "description": "Two closed regions show which reference points coincide when movement is removed.",
+    "focus": "SpE-RecW and SpD-RecW coincide; Reg-Move and Pop-NoMove coincide. Two regional targets can still require a different fishing ratio from the 70:30 global rule. Expected overlaps are useful checks, not missing curves.",
+    "settings": {"structure":"NH","movement":"none","life_history":"short","recruitment":"mean","historical_years":100,"rules":["SpE-RecW","SpD-RecW","Pop-NoMove","Reg-Move"],"benchmarks":[]}
+  }
+]

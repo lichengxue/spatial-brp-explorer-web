@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quick start · Spatial BRP explorer</title>
+<style>
+body{margin:0;background:#f3f0e9;color:#233b46;font:17px/1.65 system-ui,sans-serif}main{max-width:800px;margin:auto;padding:48px 24px 80px}a{color:#9b4d30}h1,h2{line-height:1.2}h1{font-size:42px}h2{margin-top:38px;font-size:25px}.button{display:inline-block;padding:12px 24px;background:#24435c;color:white;text-decoration:none;border-radius:4px}code{font-size:.9em;background:#e5e2da;padding:2px 5px}li{margin:10px 0}.note{border-left:3px solid #aa6748;padding-left:18px}small{color:#536771}
+</style>
+<main>
+<small>TWO REGIONS / FOUR SEASONS</small>
+<h1>Explore spatial reference points</h1>
+<p>Compare how movement, recruitment, fishing patterns and biological assumptions change fisheries reference points, biomass and catch.</p>
+<p><a class="button" href="./">Open the app →</a></p>
+<p>No installation or account is needed. R loads into your browser on the first visit; please allow a minute on a slower connection. Calculations run on your device.</p>
+<h2>Try your first comparison</h2>
+<ol>
+<li>The opening example uses natal homing, directional movement and a 40% SPR target. It calculates automatically.</li>
+<li>Inspect biomass, catch and fishing mortality. Click a legend entry to highlight its curve; overlapping curves are expected for equivalent methods.</li>
+<li>Open <strong>BRP comparison</strong> to compare F₁, F₂ and population/regional SPR.</li>
+<li>Use <strong>Model settings</strong> to change population structure, recruitment, seasonal movement, surveys, fishing pattern or biology at age.</li>
+<li>Choose reference points on the left and click <strong>Calculate &amp; project</strong>. The default SPR target is 40%; other percentages are available.</li>
+<li>Use <strong>Export results</strong> for a ZIP containing settings, annual trajectories and reference-point tables. Copy a scenario link to share a preset.</li>
+</ol>
+<h2>What the choices mean</h2>
+<p><strong>Global</strong> methods solve one fishing multiplier at a fixed F₁:F₂ ratio. <strong>Population</strong> methods target spawning potential by birth origin. <strong>Regional</strong> methods combine the origins spawning in each region using the selected weights.</p>
+<p>“Without movement” changes the reference-point calculation. The population projections retain your actual movement settings. Surveys occur at each season midpoint in both regions; selected historical indices determine survey weights.</p>
+<p><strong>Yield-SPR</strong> searches for the highest equilibrium catch with both regional ratios at least your SPR target. Under Beverton–Holt recruitment, <strong>Yield-Max</strong> is the joint system MSY comparison. Optional yield searches take longer than SPR calculations.</p>
+<p class="note">An unavailable target means the numerical solver did not find an accepted solution within its bounds. Yield/MSY results are bounded numerical maxima; they do not establish uniqueness. Open the <strong>Equations</strong> tab for definitions and calculation details.</p>
+<h2>Use the R code</h2>
+<p><a href="./spatial-brp-R.zip" download>Download the commented R scripts</a>. Extract them, set the folder as your R working directory and run <code>source("run_example.R")</code>. Edit <code>parameters.R</code> for biology and movement, and <code>run_example.R</code> for target, fishing pattern and methods. Only base R is required.</p>
+<p>The web app executes the same R model as the local GUI using <a href="https://docs.r-wasm.org/webr/latest/">WebR</a>. Reloading the page clears your session; export results you want to keep. <a href="https://github.com/lichengxue/spatial-brp-explorer-web">Read the source and README on GitHub</a>.</p>
+<p><a class="button" href="./">Open the app →</a></p>
+</main>
+</html>
